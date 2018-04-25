@@ -24,7 +24,7 @@
        if(rss.next())
        {
            qun=rss.getInt("bmodel_stock");
-           qun1=qun-qunt;
+           qun1=qun+qunt;
            String up="update tbl_branchmodel set bmodel_stock='"+qun1+"' where model_id="+rs.getString("model_id");
            obj.ExecuteCommand(up);
            System.out.println(up);

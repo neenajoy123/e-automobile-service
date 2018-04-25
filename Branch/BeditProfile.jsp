@@ -24,6 +24,7 @@
         String Email="";
         String Runby="";
         String Uname="";
+        
         String logid="";
         String sel="select * from tbl_branch b inner join tbl_login l on b.login_id=l.login_id inner join tbl_place p on b.place_id=p.place_id  where branch_id='"+session.getAttribute("Branch")+"'";
         ResultSet rs1=obj.selectData(sel);
@@ -37,6 +38,7 @@
             Email=rs1.getString("branch_email");
             Runby=rs1.getString("branch_runby");
             Uname=rs1.getString("login_username");
+            
             logid=rs1.getString("login_id");
         }
         
@@ -52,6 +54,7 @@
             Email =request.getParameter("txtemail");
             Runby=request.getParameter("txtrun");
             Uname=request.getParameter("txtuname");
+            
             logid=request.getParameter("hid");
             String update="update tbl_login set login_username='"+Uname+"' where login_id="+logid;
             boolean bb=obj.ExecuteCommand(update);
@@ -144,6 +147,7 @@
                 </td>
                 
             </tr>
+            
             <tr>
                 <td colspan="2" align="center">
                     <input type="submit" name="btn_submit" value="SUBMIT">

@@ -3,6 +3,7 @@
     Created on : Mar 1, 2018, 10:06:53 AM
     Author     : ckc
 --%>
+<%@include file="Header.jsp" %>
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean id="obj" class="mydb.dbconnection"></jsp:useBean>
     
@@ -26,7 +27,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add Spareparts</title>
     </head>
-    <body>
+     <body background="shelby-cobra-gt500-1967-wallpaper-3.jpg>
        <%
          String branchsp="";
          String branchId="";
@@ -74,9 +75,13 @@
          
         
        
-    <center><h1>Add Spare Parts</h1></center>
+     <center><h1>Add Spare Parts</h1></center>
     <form>
-        <table align="center" border="1">
+        
+        <br>
+        <br>
+        <br>
+        <table align="center" border="1" style="color:black;width: 40%;height: 90%;border-color: skyblue">
            <tr>
                      <td>
                         Company Name

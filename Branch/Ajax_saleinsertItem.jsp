@@ -10,7 +10,7 @@
 <%
     String qun=request.getParameter("qun");
     String model=request.getParameter("model");
-    String ins="insert into tbl_vehiclesale(vph_id,model_id,vsale_rate,vsale_utotal,vsale_quantity) values('"+session.getAttribute("vph")+"','"+model+"','"+session.getAttribute("rate")+"','"+session.getAttribute("utotal")+"','"+qun+"')";
+    String ins="insert into tbl_vehiclesale(vsh_id,model_id,vsale_rate,vsale_utotal,vsale_quantity) values('"+session.getAttribute("vsh")+"','"+model+"','"+session.getAttribute("rate")+"','"+session.getAttribute("utotal")+"','"+qun+"')";
     System.out.println(ins);
     boolean b=obj.ExecuteCommand(ins);
     
@@ -29,16 +29,29 @@
         {
             stock=rs.getString("bmodel_stock");
             stock1=Integer.parseInt(stock);
-            totstock=qun1+stock1;
+            if(stock1<qun1)
+            {
+                %>
+                <script>
+                    alert("Insufficient Stock");
+                </script>
+                <%
+            }
+            else
+            {
+            totstock=stock1-qun1;
             String update="update tbl_branchmodel set bmodel_stock='"+totstock+"' where bmodel_id="+rs.getString("bmodel_id");
             obj.ExecuteCommand(update);
             System.out.println(update);
+            }
         }
         else
         {
-            String in="insert into tbl_branchmodel(branch_id,model_id,bmodel_stock) values('"+session.getAttribute("Branch") +"','"+model+"','"+qun1+"')";
-            obj.ExecuteCommand(in);
-            System.out.println(in);
+            %>
+            <script>
+                alert("Stock is unavailable");
+            </script>
+            <%
         }
     }
 

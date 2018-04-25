@@ -119,7 +119,7 @@
         <%
             // Creating Invoice No
             String no="0";
-            String sel="select MAX(vph_invoiceno) as invoice from tbl_vehiclepurchasehead where branch_id="+session.getAttribute("Branch");
+            String sel="select MAX(vsh_invoiceno) as invoice from tbl_vehiclesalehead where branch_id="+session.getAttribute("Branch");
             ResultSet rs=obj.selectData(sel);
             if(rs.next())
             {
@@ -145,7 +145,7 @@
                 if(request.getParameter("btnsave")!=null)
                 {
                     String total=request.getParameter("gtotal");
-                    String update="update tbl_vehiclepurchasehead set vph_grandtotal='"+total+"' where vph_id="+session.getAttribute("vph");
+                    String update="update tbl_vehiclesalehead set vsh_gtotal='"+total+"' where vsh_id="+session.getAttribute("vsh");
                     boolean b=obj.ExecuteCommand(update);
                     if(b)
                     {
@@ -184,6 +184,17 @@
                            <option value="">
                                 --select--
                             </option>
+                            <%
+                            String sel1="select cus_name,cus_id from tbl_customer";
+                            ResultSet rs11=obj.selectData(sel1);
+                            while(rs11.next())
+                            {
+                                %>
+                                <option value="<%=rs11.getString("cus_id")%>"><%=rs11.getString("cus_name")%></option>
+                                <%
+                            }
+                            
+                            %>
                             
                                                  
                         </select>

@@ -13,15 +13,16 @@
         int gtotal=0;
     %>
     <tr>
-        
+       
         <th>Model</th>
+        <th>Spare Parts</th>
         <th>Rate</th>
         <th>Quantity</th>
         <th>Unit Total</th>
         
     </tr>
     <%
-        String sel="select * from tbl_vehiclesale v inner join tbl_model m on m.model_id=v.model_id and v.vsh_id="+session.getAttribute("vsh");
+        String sel="select * from tbl_spartssale sp inner join tbl_model m inner join tbl_spareparts s on sp.sp_id=s.sp_id and s.model_id=m.model_id and sp.ssh_id="+session.getAttribute("sph");
         ResultSet rs=obj.selectData(sel);
         System.out.println("test"+sel);
         while(rs.next())
@@ -29,12 +30,13 @@
             %>
             <tr>
                 <td><%=rs.getString("model_name")%></td>
-                <td><%=rs.getString("vsale_rate")%></td>
-                <td><%=rs.getString("vsale_quantity")%></td>
-                <td><%=rs.getString("vsale_utotal")%></td>
-                <td><a onclick="deleteMethod(<%=rs.getString("vsale_id")%>)">Delete</a></td>
+                <td><%=rs.getString("sp_name")%></td>
+                <td><%=rs.getString("ssale_rate")%></td>
+                <td><%=rs.getString("ssale_qun")%></td>
+                <td><%=rs.getString("ssale_utotal")%></td>
+                <td><a onclick="deleteMethod(<%=rs.getString("ssale_id")%>)">Delete</a></td>
                 <%
-                utotal=Integer.parseInt(rs.getString("vsale_utotal"));
+                utotal=Integer.parseInt(rs.getString("ssale_utotal"));
                 gtotal=gtotal+utotal;
                 %>
                 

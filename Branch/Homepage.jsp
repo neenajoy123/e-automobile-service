@@ -25,15 +25,21 @@
         
         <form>
             <table align="center">
-        <h1 align="center">Welcome <%=name%></h1
+                <h1 align="center">Welcome <%=name%></h1>
         
         <tr><td><a href="ViewProfile.jsp">View Profile</a></td><td></td><td></td><td></td>
             <td><a href="AddBranchModel.jsp">Add Model</a></td><td></td><td></td><td></td>
         <td><a href="AddBranchSpareparts.jsp">Add Spare Parts</a></td><td></td><td></td><td></td>
-        <td><a href="CustomerRegistration.jsp">Add Customer</a></td><td></td><td></td><td></td>
+        <td><a href="RegisteredCustomer.jsp">Registered Customers</a></td><td></td><td></td><td></td>
         <td><a href="VehiclePurchase.jsp">Vehicle Purchase</a></td><td></td><td></td><td></td>
         <td><a href="SparePartsPurchase.jsp">Spare Parts Purchase</a></td><td></td><td></td><td></td>
-        <td><a href="VehicleSale.jsp">Vehicle Sale</a></td><td></td><td></td><td></td></tr>
+        <td><a href="VehicleSale.jsp">Vehicle Sale</a></td><td></td><td></td><td></td>
+        <td><a href="SparePartsSale.jsp">Spareparts Sale</a></td><td></td><td></td><td></td>
+        <td><a href="ViewServiceRequests.jsp">Service Requests</a></td><td></td><td></td><td></td>
+        <td><a href="ViewVehicleServiceStatus.jsp">Service Status</a></td><td></td><td></td><td></td>
+        <td><a href="Job.jsp">Add jobs</a></td><td></td><td></td><td></td>
+        <td><a href="ComplaintsView.jsp">View Customer Complaints</a></td><td></td><td></td><td></td>
+        <td><a href="Complaints.jsp">Add Complaints</a></td><td></td><td></td><td></td></tr>
         </table>
         </form>
     </body>
