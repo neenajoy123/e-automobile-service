@@ -25,11 +25,15 @@
         
         <form>
             <table align="center">
-        <h1 align="center">Welcome <%=name%></h1
+                <h1 align="center">Welcome <%=name%></h1>
         
         <tr><td><a href="ViewProfile.jsp">View Profile</a></td><td></td><td></td><td></td>
             <td><a href="Model.jsp">Add Models</a></td><td></td><td></td><td></td>  
-            <td><a href="Spareparts.jsp">Add Spareparts</a></td><td></td><td></td><td></td></tr>
+            <td><a href="Spareparts.jsp">Add Spareparts</a></td><td></td><td></td><td></td>
+            <td><a href="ServicesTypes.jsp">Add Services</a></td><td></td><td></td><td></td>
+            <td><a href="AddGames.jsp">Add Games</a></td><td></td><td></td><td></td>
+            <td><a href="ViewGameApplication.jsp">View Game Applications</a></td><td></td><td></td><td></td>
+        </tr>
         
         </table>
         </form>
